@@ -7,7 +7,7 @@ void read(int arr[10][10], int x, int y)
 	{
 		for (j = 1; j <= y; j++)
 		{
-			cout << "arr["<<i<<"]["<<j<<"]";
+			cout << "arr["<<i<<"]["<<j<<"]=";
 			cin >> arr[i][j];
 		}
 	}
@@ -26,13 +26,16 @@ void dspl(int arr[10][10], int x, int y)
 }
 int main()
 {
-	int r, c;
-	int a[10][10];
+	int row, column;
+	int arr[10][10];
 	cout << "Enter no. of rows=";
-	cin >> r;
+	cin >> row;
 	cout << "Enter no. of columns=";
-	cin >> c;
-	read(a, r, c);
-	dspl(a, r, c);
+	cin >> column;
+	
+	cout<<"matrix element are::"<<"\n";
+	read(arr, row, column);
+	cout<<"matrix is::"<<"\n";
+	dspl(arr, row, column);
 	return 0;
 }
