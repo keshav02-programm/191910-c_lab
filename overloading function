@@ -1,0 +1,33 @@
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+double power(double x)
+{ 
+  return pow(x,2);
+  
+}
+double power(double x, float y )
+{
+	return pow(x,y);
+	
+}
+void display(double x,float y)
+{cout<<"result with default power: "<<power(x)<<"\n";
+	cout<<"result with exponent:"<<power(x,y);
+}
+	float exponent;
+	float base;
+int main(){
+
+	cout<<"Give the base:";
+	cin>>base;
+	cout<<"Enter the exponent:";
+	cin>>exponent;
+	display(base,exponent);
+
+	
+}
+
+	
