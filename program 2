@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+
+inline power(double,int=2);
+
+int main()
+{
+	int n;
+	double m,result;
+	cout << "Enter number : ";
+	cin >> m;
+	cout << "Enter exponent : ";
+	cin >> n;
+	result = power(m,n);
+	cout << "Result is " << result;
+	result= power(m);
+	cout << "\nResult without passing exponent is " << result;
+
+	return 0;
+}
+
+inline power(double a, int b)
+{
+	double x = 1;
+	if(b>0)
+	{
+
+	for(int i = 1; i <= b; i++)
+		x = x * a;
+	}
+	else
+	{
+		for(int i=-1;i>=b;i--)
+		{
+			x=x*1/a;
+		}
+	}
+	return x;
+}
