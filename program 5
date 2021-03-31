@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+class account
+{
+	public:
+		string name,type;
+		long int ac,aadhar;
+		int withdraw,deposit,balance,i;
+		void input()
+		{
+			cout<<"enter name: ";  cin>>name;
+			cout<<"account number: ";  cin>>ac;
+			cout<<"enter aadhar number:"; cin>>aadhar;
+			cout<<"type of account: ";  cin>>type;
+			cout<<"balance in your account: "; cin>>balance;
+		}
+		void display()
+		{
+			int n;
+			float intrest,rate=3.14,time;
+			cout<<"1. for personal information. "<<endl<<"2. for deposit money."<<endl<<"3. for withdraw money"<<endl;
+			cout<<"Enter n: ";
+			cin>>n;
+			cout<<endl;
+			switch(n)
+				{
+					case 1:
+						cout<<"Name: "<<name<<endl<<"Account number: "<<ac<<endl<<"Net Balance: "<<balance<<endl<<"Type of account: "<<type<<endl;
+						break;
+					case 2:
+						cout<<"deposit: ";  cin>>deposit;
+						balance=balance+deposit;
+						cout<<"Balance: "<<balance<<endl;
+						
+						cout<<"time: ";  cin>>time;
+						intrest=(balance*rate*time)/100;
+						cout<<"Net Balance: "<<balance+intrest;
+						break;
+					case 3:
+						cout<<"withdraw: ";  cin>>withdraw;
+					   if(balance>=withdraw)
+					   	balance=balance-withdraw;
+					   	 else
+					   	 cout<<"balance is Insufficent";
+						cout<<"Balance: "<<balance<<endl;
+					
+						cout<<"time: ";  cin>>time;
+						intrest=(balance*rate*time)/100;
+						cout<<"Net Balance: "<<balance+intrest;
+						break;
+					default:
+						cout<<"Net Balance: "<<balance;	
+				}
+				cout<<endl;
+			
+		};
+};
+int main()
+{
+	account a1;
+	a1.input();
+	a1.display();
+}
